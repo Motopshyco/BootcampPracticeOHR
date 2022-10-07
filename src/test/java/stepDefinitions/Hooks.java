@@ -6,7 +6,7 @@ import webDrivers.strategies.WebDriverFactory;
 
 public class Hooks {
 
-    protected static WebDriver webDriver;
+    public static WebDriver webDriver;
 
     @Before
     public void setup() throws Exception {
