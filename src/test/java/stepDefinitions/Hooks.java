@@ -14,9 +14,7 @@ public class Hooks {
     @Before
     public void setup() throws Exception {
         String browser = System.getenv("browser");
-        String url = System.getenv("url");
         webDriver = WebDriverFactory.getDriver(browser);
-        webDriver.get(url);
     }
 
     @After

@@ -15,6 +15,9 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordInput;
 
+    @FindBy(css = "button[class*='orangehrm-login-button']")
+    public WebElement loginButton;
+
     public void fillLoginCredentials() {
         WaitUntilElementVisible(usernameInput);
         usernameInput.isDisplayed();
@@ -22,5 +25,10 @@ public class LoginPage extends BasePage {
         WaitUntilElementVisible(passwordInput);
         passwordInput.isDisplayed();
         passwordInput.sendKeys(System.getenv("password"));
+    }
+
+    public void clickLoginButton() {
+        WaitUntilElementVisible(loginButton);
+        loginButton.click();
     }
 }
