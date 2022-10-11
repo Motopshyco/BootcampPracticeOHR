@@ -1,4 +1,5 @@
 package pages;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ public class AddEmpPage extends BasePage{
     public AddEmpPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
+
 
     @FindBy(xpath = "//a[normalize-space()='Add Employee']")
     public WebElement addUserButton;
@@ -22,7 +24,7 @@ public class AddEmpPage extends BasePage{
     @FindBy(name = "lastName")
     public WebElement lastNameInput;
 
-    @FindBy(css = "div[class*='oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/input")
     public WebElement idInput;
 
     @FindBy(css = "button[type='submit']")
@@ -50,7 +52,11 @@ public class AddEmpPage extends BasePage{
         lastNameInput.sendKeys(lastname);
     }
 
-    public void saveNewEmployee () {
+    public void saveNewEmployee (String id) {
+        clickElement(idInput);
+        idInput.sendKeys(Keys.CONTROL + "a");
+        idInput.sendKeys(Keys.DELETE);
+        idInput.sendKeys(id);
         clickElement(saveButton);
     }
 }

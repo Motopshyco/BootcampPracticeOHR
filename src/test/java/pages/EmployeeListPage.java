@@ -21,15 +21,17 @@ public class EmployeeListPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public WebElement searchButton;
 
-    @FindBy(css = "//div[contains(text(),'Charlie')]")
-    public WebElement firstNameField;
+    public WebElement nameSelector(String name) {
+        WebElement nameString = driver.findElement(By.xpath("//div[contains(text(),'" + name + "')]"));
+        return nameString;
+    }
 
     public void checkNewUser(String id, String name) {
         clickElement(employeeListButton);
-        clickElement(idFilterInput);
+        WaitUntilElementVisible(idFilterInput);
         idFilterInput.sendKeys(id);
         clickElement(searchButton);
-        WaitUntilElementVisible(firstNameField);
+        WaitUntilElementVisible(nameSelector(name));
         String firstname = driver.findElement(By.xpath("//div[contains(text(),'"+ name + "')]")).getText();
         Assert.assertEquals(name, firstname);
     }
