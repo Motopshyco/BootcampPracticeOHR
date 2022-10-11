@@ -13,7 +13,7 @@ public class AddNewEmployee {
     private WebDriver driver = Hooks.webDriver;
     private WebDriverWait wait;
     private int timeout = Integer.parseInt(System.getenv("timeout"));
-    public String id;
+    public String idNumber;
     public String name;
 
     public AddNewEmployee() throws Exception {
@@ -34,6 +34,7 @@ public class AddNewEmployee {
     @When("the user sets {string} as a middle name")
     public void the_user_sets_as_a_middle_name(String middleName) {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
+        name = name + " " + middleName;
         addEmp.fillMiddleName(middleName);
     }
     @When("the user sets {string} as a last name")
@@ -41,15 +42,16 @@ public class AddNewEmployee {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
         addEmp.fillLastName(lastName);
     }
-    @When("the user saves the new employee")
-    public void the_user_saves_the_new_employee() {
+    @When("the user sets the id on {string} and saves the new employee")
+    public void the_user_sets_the_id_on_and_saves_the_new_employee(String id) {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
-        id = addEmp.idInput.getText();
-        addEmp.saveNewEmployee();
+        idNumber = id;
+        addEmp.saveNewEmployee(id);
+
     }
     @Then("the new employee should be show in the Employee List")
     public void the_new_employee_should_be_show_in_the_employee_list() {
         EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
-        employeeList.checkNewUser(id, name);
+        employeeList.checkNewUser(idNumber, name);
     }
 }
