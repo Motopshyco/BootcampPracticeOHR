@@ -20,15 +20,12 @@ public class LoginPage extends BasePage {
 
     public void fillLoginCredentials() {
         WaitUntilElementVisible(usernameInput);
-        usernameInput.isDisplayed();
         usernameInput.sendKeys(System.getenv("user"));
         WaitUntilElementVisible(passwordInput);
-        passwordInput.isDisplayed();
         passwordInput.sendKeys(System.getenv("password"));
     }
 
     public void clickLoginButton() {
-        WaitUntilElementVisible(loginButton);
-        loginButton.click();
+        clickElement(loginButton);
     }
 }
