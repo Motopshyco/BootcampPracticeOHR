@@ -6,17 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AddEmpPage;
 import pages.EmployeeListPage;
-
 import java.time.Duration;
 
-public class AddNewEmployee {
+public class PimSteps {
     private WebDriver driver = Hooks.webDriver;
     private WebDriverWait wait;
     private int timeout = Integer.parseInt(System.getenv("timeout"));
-    public String idNumber;
     public String name;
 
-    public AddNewEmployee() throws Exception {
+    public PimSteps() throws Exception {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
     }
 
@@ -42,16 +40,27 @@ public class AddNewEmployee {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
         addEmp.fillLastName(lastName);
     }
-    @When("the user sets the id on {string} and saves the new employee")
-    public void the_user_sets_the_id_on_and_saves_the_new_employee(String id) {
+    @When("the user saves the new employee")
+    public void the_user_saves_the_new_employee() {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
-        idNumber = id;
-        addEmp.saveNewEmployee(id);
-
+        addEmp.saveNewEmployee();
     }
     @Then("the new employee should be show in the Employee List")
     public void the_new_employee_should_be_show_in_the_employee_list() {
         EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
-        employeeList.checkNewUser(idNumber, name);
+        employeeList.searchEmployee();
+        employeeList.checkNewUser(name);
+    }
+    @When("the user delete the employee")
+    public void the_user_delete_the_employee() {
+        EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
+        employeeList.searchEmployee();
+        employeeList.deleteEmployee();
+    }
+
+    @Then("The employee should not appears in the Employee List")
+    public void the_employee_should_not_appears_in_the_employee_list() {
+        EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
+        employeeList.searchEmployee();
     }
 }
