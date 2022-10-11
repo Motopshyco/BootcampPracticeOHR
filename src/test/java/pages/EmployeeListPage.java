@@ -1,5 +1,6 @@
 package pages;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,18 +22,41 @@ public class EmployeeListPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()='Search']")
     public WebElement searchButton;
 
+    @FindBy(css = "div[class*='orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
+    public WebElement searchTittle;
+
+    @FindBy(css = ".oxd-icon.bi-trash")
+    public WebElement deleteIcon;
+
+    @FindBy(xpath = "//button[normalize-space()='Yes, Delete']")
+    public WebElement acceptDelete;
+
+    @FindBy(xpath = "//span[normalize-space()='No Records Found']")
+    public WebElement emptyMessage;
+
     public WebElement nameSelector(String name) {
         WebElement nameString = driver.findElement(By.xpath("//div[contains(text(),'" + name + "')]"));
         return nameString;
     }
 
-    public void checkNewUser(String id, String name) {
+    public void searchEmployee() {
         clickElement(employeeListButton);
         WaitUntilElementVisible(idFilterInput);
-        idFilterInput.sendKeys(id);
+        idFilterInput.sendKeys(Keys.CONTROL + "v");
         clickElement(searchButton);
+        WaitUntilElementVisible(searchTittle);
+    }
+
+    public void checkNewUser(String name) {
         WaitUntilElementVisible(nameSelector(name));
-        String firstname = driver.findElement(By.xpath("//div[contains(text(),'"+ name + "')]")).getText();
+        String firstname = nameSelector(name).getText();
         Assert.assertEquals(name, firstname);
+    }
+
+    public void deleteEmployee() {
+        clickElement(deleteIcon);
+        clickElement(acceptDelete);
+        WaitUntilElementVisible(emptyMessage);
+        Assert.assertTrue(emptyMessage.isDisplayed());
     }
 }

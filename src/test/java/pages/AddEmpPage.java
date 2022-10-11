@@ -33,6 +33,9 @@ public class AddEmpPage extends BasePage{
     @FindBy(css = "//button[normalize-space()='Cancel']")
     public WebElement cancelButton;
 
+    @FindBy(xpath = "//h6[normalize-space()='Personal Details']")
+    public WebElement personalDetailsTittle;
+
     public void selectAddEmployee () {
         clickElement(addUserButton);
     }
@@ -52,11 +55,11 @@ public class AddEmpPage extends BasePage{
         lastNameInput.sendKeys(lastname);
     }
 
-    public void saveNewEmployee (String id) {
+    public void saveNewEmployee () {
         clickElement(idInput);
         idInput.sendKeys(Keys.CONTROL + "a");
-        idInput.sendKeys(Keys.DELETE);
-        idInput.sendKeys(id);
+        idInput.sendKeys(Keys.CONTROL + "c");
         clickElement(saveButton);
+        WaitUntilElementVisible(personalDetailsTittle);
     }
 }
