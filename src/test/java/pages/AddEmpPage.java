@@ -36,22 +36,25 @@ public class AddEmpPage extends BasePage{
     @FindBy(xpath = "//h6[normalize-space()='Personal Details']")
     public WebElement personalDetailsTittle;
 
+    @FindBy(xpath = "//label[normalize-space()='Employee Full Name']")
+    public WebElement employeeFullNameTittle;
+
     public void selectAddEmployee () {
         clickElement(addUserButton);
     }
 
-    public void fillFirstName (String firstname) {
-        clickElement(firstNameInput);
-        firstNameInput.sendKeys(firstname);
+    public void fillFirstName (String firstName) {
+        WaitUntilElementVisible(firstNameInput);
+        firstNameInput.sendKeys(firstName);
     }
 
     public void fillMiddleName (String middleName) {
-        clickElement(middleNameInput);
+        WaitUntilElementVisible(middleNameInput);
         middleNameInput.sendKeys(middleName);
     }
 
     public void fillLastName (String lastname) {
-        clickElement(lastNameInput);
+        WaitUntilElementVisible(lastNameInput);
         lastNameInput.sendKeys(lastname);
     }
 
@@ -61,5 +64,17 @@ public class AddEmpPage extends BasePage{
         idInput.sendKeys(Keys.CONTROL + "c");
         clickElement(saveButton);
         WaitUntilElementVisible(personalDetailsTittle);
+    }
+
+    public void editEmployeeName (String firstName, String middleName) {
+        waitChargeTime();
+        WaitUntilElementVisible(personalDetailsTittle);
+        WaitUntilElementVisible(employeeFullNameTittle);
+        firstNameInput.sendKeys(Keys.CONTROL + "a");
+        firstNameInput.sendKeys(Keys.DELETE);
+        firstNameInput.sendKeys(firstName);
+        middleNameInput.sendKeys(Keys.CONTROL + "a" + middleName);
+        middleNameInput.sendKeys(Keys.DELETE);
+        middleNameInput.sendKeys(firstName);
     }
 }

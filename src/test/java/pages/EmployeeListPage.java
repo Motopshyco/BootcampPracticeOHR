@@ -34,6 +34,9 @@ public class EmployeeListPage extends BasePage {
     @FindBy(xpath = "//span[normalize-space()='No Records Found']")
     public WebElement emptyMessage;
 
+    @FindBy(css = ".oxd-icon.bi-pencil-fill")
+    public WebElement editEmployeeIcon;
+
     public WebElement nameSelector(String name) {
         WebElement nameString = driver.findElement(By.xpath("//div[contains(text(),'" + name + "')]"));
         return nameString;
@@ -56,7 +59,15 @@ public class EmployeeListPage extends BasePage {
     public void deleteEmployee() {
         clickElement(deleteIcon);
         clickElement(acceptDelete);
+    }
+
+    public void confirmDeleteEmployee() {
         WaitUntilElementVisible(emptyMessage);
         Assert.assertTrue(emptyMessage.isDisplayed());
+    }
+
+    public void editEmployee(String name) {
+        WaitUntilElementVisible(nameSelector(name));
+        clickElement(editEmployeeIcon);
     }
 }
