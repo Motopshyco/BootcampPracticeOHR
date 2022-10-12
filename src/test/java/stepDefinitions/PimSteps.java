@@ -5,6 +5,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AddEmpPage;
+import pages.EditEmployeePage;
 import pages.EmployeeListPage;
 import java.time.Duration;
 
@@ -62,5 +63,24 @@ public class PimSteps {
     public void the_employee_should_not_appears_in_the_employee_list() {
         EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
         employeeList.searchEmployee();
+        employeeList.confirmDeleteEmployee();
+    }
+
+    @When("the user changes the name of the employee to {string} as first name and {string} as second name")
+    public void the_user_changes_the_name_of_the_employee_to_as_first_name_and_as_second_name(String firstName, String secondName) {
+        EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
+        AddEmpPage addEmp = new AddEmpPage(driver, wait);
+        EditEmployeePage editEmp = new EditEmployeePage(driver, wait);
+        employeeList.editEmployee(name);
+        name = firstName + " " + secondName;
+        addEmp.editEmployeeName(firstName, secondName);
+        editEmp.savePersonalChanges();
+    }
+
+    @Then("the name of the employee should change in the Employee List")
+    public void the_name_of_the_employee_should_change_in_the_employee_list() {
+        EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
+        employeeList.searchEmployee();
+        employeeList.checkNewUser(name);
     }
 }
