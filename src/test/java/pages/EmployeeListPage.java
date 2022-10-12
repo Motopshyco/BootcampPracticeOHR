@@ -19,7 +19,7 @@ public class EmployeeListPage extends BasePage {
     @FindBy(css = "div[class*='oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     public WebElement idFilterInput;
 
-    @FindBy(xpath = "//button[normalize-space()='Search']")
+    @FindBy(css = "button[type='submit']")
     public WebElement searchButton;
 
     @FindBy(css = "div[class*='orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
@@ -42,10 +42,10 @@ public class EmployeeListPage extends BasePage {
         return nameString;
     }
 
-    public void searchEmployee() {
+    public void searchEmployee(String id) {
         clickElement(employeeListButton);
         WaitUntilElementVisible(idFilterInput);
-        idFilterInput.sendKeys(Keys.CONTROL + "v");
+        idFilterInput.sendKeys(id);
         clickElement(searchButton);
         WaitUntilElementVisible(searchTittle);
     }
