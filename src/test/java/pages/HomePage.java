@@ -29,8 +29,6 @@ public class HomePage extends BasePage {
         Assert.assertTrue(menuSelector("Recruitment").isDisplayed());
         WaitUntilElementVisible(menuSelector("My Info"));
         Assert.assertTrue(menuSelector("My Info").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Performance"));
-        Assert.assertTrue(menuSelector("Performance").isDisplayed());
         WaitUntilElementVisible(menuSelector("Dashboard"));
         Assert.assertTrue(menuSelector("Dashboard").isDisplayed());
         WaitUntilElementVisible(menuSelector("Directory"));

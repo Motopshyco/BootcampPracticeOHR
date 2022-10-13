@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +45,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: : The user can login into the page">
+  <component name="RunManager" selected="TestNG.TestRunner">
     <configuration name="Scenario: The user can delete an employee" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
@@ -231,8 +235,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: : The user can login into the page" />
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: : The user can login into the page" />
         <item itemvalue="Cucumber Java.Scenario: The user can't create two employees with the same id" />
         <item itemvalue="Cucumber Java.Scenario: The user can edit and employee" />
         <item itemvalue="Cucumber Java.Scenario: The user can delete an employee" />
