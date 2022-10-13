@@ -37,6 +37,9 @@ public class EmployeeListPage extends BasePage {
     @FindBy(css = ".oxd-icon.bi-pencil-fill")
     public WebElement editEmployeeIcon;
 
+    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+    public WebElement filterByNameInput;
+
     public WebElement nameSelector(String name) {
         WebElement nameString = driver.findElement(By.xpath("//div[contains(text(),'" + name + "')]"));
         return nameString;
@@ -46,6 +49,14 @@ public class EmployeeListPage extends BasePage {
         clickElement(employeeListButton);
         WaitUntilElementVisible(idFilterInput);
         idFilterInput.sendKeys(id);
+        clickElement(searchButton);
+        WaitUntilElementVisible(searchTittle);
+    }
+
+    public void searchEmployeeByName(String name) {
+        clickElement(employeeListButton);
+        WaitUntilElementVisible(filterByNameInput);
+        filterByNameInput.sendKeys(name);
         clickElement(searchButton);
         WaitUntilElementVisible(searchTittle);
     }
