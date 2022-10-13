@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AddEmpPage;
 import pages.EditEmployeePage;
 import pages.EmployeeListPage;
+import pages.ReportsPage;
+
 import java.time.Duration;
 
 public class PimSteps {
@@ -104,5 +106,34 @@ public class PimSteps {
     public void the_user_get_a_required_message() {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
         addEmp.checkNameRequired();
+    }
+
+    @Then("the new employee should be filter by name in the Employee List")
+    public void the_new_employee_should_be_filter_by_name_in_the_employee_list() {
+        EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
+        EditEmployeePage editEmp = new EditEmployeePage(driver, wait);
+        editEmp.waitPersonalDetailsTittle();
+        employeeList.searchEmployeeByName(name);
+        employeeList.checkNewUser(name);
+    }
+
+    @Given("the user goes to the reports tab")
+    public void the_user_goes_to_the_reports_tab() {
+        ReportsPage reports = new ReportsPage(driver, wait);
+        reports.selectReportTab();
+    }
+
+    @When("the user creates a report with the name {string}")
+    public void the_user_creates_a_report_with_the_name(String reportName) {
+        ReportsPage reports = new ReportsPage(driver, wait);
+        reports.setReportName(reportName);
+        reports.selectReportOption();
+        reports.saveReport();
+    }
+
+    @When("the new report should be show in the report list")
+    public void the_new_report_should_be_show_in_the_report_list() {
+        ReportsPage reports = new ReportsPage(driver, wait);
+        reports.checkCreatedReport();
     }
 }

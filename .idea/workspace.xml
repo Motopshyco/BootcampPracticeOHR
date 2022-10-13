@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/Reports.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/Hooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/Hooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PIM.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PIM.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
   }
 }</component>
   <component name="RunManager" selected="TestNG.TestRunner">
-    <configuration name="Scenario: The user can delete an employee" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: The user can create a report (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
         <env name="browser" value="chrome" />
@@ -55,14 +57,14 @@
         <env name="user" value="Admin" />
         <env name="password" value="admin123" />
       </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PIM.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Reports.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^The user can delete an employee$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can delete an employee$&quot;" />
+      <option name="NAME_FILTER" value="^The user can create a report$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can create a report$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: The user can delete an employee" />
+      <option name="SUGGESTED_NAME" value="Scenario: The user can create a report" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -74,7 +76,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: The user can edit and employee" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: The user can create a report" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
         <env name="browser" value="chrome" />
@@ -87,38 +89,10 @@
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^The user can edit and employee$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can edit and employee$&quot;" />
+      <option name="NAME_FILTER" value="^The user can create a report$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can create a report$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: The user can edit and employee" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: The user can't create two employees with the same id" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <envs>
-        <env name="browser" value="chrome" />
-        <env name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" />
-        <env name="timeout" value="5" />
-        <env name="user" value="Admin" />
-        <env name="password" value="admin123" />
-      </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PIM.feature" />
-      <option name="GLUE" value="stepDefinitions" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^The user can\'t create two employees with the same id$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can\'t create two employees with the same id$&quot;" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: The user can't create two employees with the same id" />
+      <option name="SUGGESTED_NAME" value="Scenario: The user can create a report" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -147,6 +121,34 @@
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^\: The user can login into the page$&quot;" />
       <shortenClasspath name="NONE" />
       <option name="SUGGESTED_NAME" value="Scenario: : The user can login into the page" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: the user can filter employees by name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <envs>
+        <env name="browser" value="chrome" />
+        <env name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" />
+        <env name="timeout" value="5" />
+        <env name="user" value="Admin" />
+        <env name="password" value="admin123" />
+      </envs>
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PIM.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="BootcampPracticeOHR" />
+      <option name="NAME_FILTER" value="^the user can filter employees by name$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can filter employees by name$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: the user can filter employees by name" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -236,10 +238,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: The user can create a report (1)" />
+        <item itemvalue="Cucumber Java.Scenario: The user can create a report" />
+        <item itemvalue="Cucumber Java.Scenario: the user can filter employees by name" />
         <item itemvalue="Cucumber Java.Scenario: : The user can login into the page" />
-        <item itemvalue="Cucumber Java.Scenario: The user can't create two employees with the same id" />
-        <item itemvalue="Cucumber Java.Scenario: The user can edit and employee" />
-        <item itemvalue="Cucumber Java.Scenario: The user can delete an employee" />
       </list>
     </recent_temporary>
   </component>
@@ -268,11 +270,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java</url>
           <line>87</line>

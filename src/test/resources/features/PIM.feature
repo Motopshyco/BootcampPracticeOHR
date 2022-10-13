@@ -27,6 +27,11 @@ Feature: PIM
     Then the name of the employee should change in the Employee List
     And the user delete the employee
 
+  @Functional
+  Scenario: the user can filter employees by name
+    Then the new employee should be filter by name in the Employee List
+    And the user delete the employee
+
   @Negative
   Scenario: The user can't create two employees with the same id
     When the user goes to the Add Employee tab
