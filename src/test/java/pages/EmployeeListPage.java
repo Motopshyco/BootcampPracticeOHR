@@ -31,7 +31,7 @@ public class EmployeeListPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()='Yes, Delete']")
     public WebElement acceptDelete;
 
-    @FindBy(xpath = "//span[normalize-space()='No Records Found']")
+    @FindBy(css = "div[class='orangehrm-horizontal-padding orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
     public WebElement emptyMessage;
 
     @FindBy(css = ".oxd-icon.bi-pencil-fill")

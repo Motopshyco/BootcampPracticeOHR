@@ -14,7 +14,7 @@ public class PimSteps {
     private WebDriverWait wait;
     private int timeout = Integer.parseInt(System.getenv("timeout"));
     public String name;
-    public String id;
+    public static String id;
 
     public PimSteps() throws Exception {
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));

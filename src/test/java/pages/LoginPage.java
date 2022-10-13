@@ -18,6 +18,9 @@ public class LoginPage extends BasePage {
     @FindBy(css = "button[class*='orangehrm-login-button']")
     public WebElement loginButton;
 
+    @FindBy(css = "img[alt='client brand banner']")
+    public WebElement logoBanner;
+
     public void fillLoginCredentials() {
         WaitUntilElementVisible(usernameInput);
         usernameInput.sendKeys(System.getenv("user"));
@@ -27,5 +30,6 @@ public class LoginPage extends BasePage {
 
     public void clickLoginButton() {
         clickElement(loginButton);
+        WaitUntilElementVisible(logoBanner);
     }
 }
