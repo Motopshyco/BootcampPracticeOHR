@@ -51,6 +51,8 @@ public class PimSteps {
     @Then("the new employee should be show in the Employee List")
     public void the_new_employee_should_be_show_in_the_employee_list() {
         EmployeeListPage employeeList = new EmployeeListPage(driver, wait);
+        EditEmployeePage editEmp = new EditEmployeePage(driver, wait);
+        editEmp.waitPersonalDetailsTittle();
         employeeList.searchEmployee(id);
         employeeList.checkNewUser(name);
     }
@@ -75,6 +77,7 @@ public class PimSteps {
         EditEmployeePage editEmp = new EditEmployeePage(driver, wait);
         employeeList.editEmployee(name);
         name = firstName + " " + secondName;
+        editEmp.waitPersonalDetailsTittle();
         addEmp.editEmployeeName(firstName, secondName);
         editEmp.savePersonalChanges();
     }
@@ -89,12 +92,17 @@ public class PimSteps {
     @When("The user tries to create another employee with the same id")
     public void the_user_tries_to_create_another_employee_with_the_same_id() {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
-        addEmp.selectAddEmployee();
         addEmp.changeEmployeeId(id);
     }
     @Then("the user should to receive an error message")
     public void the_user_should_to_receive_an_error_message() {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
         addEmp.checkErrorMessage();
+    }
+
+    @Then("the user get a required message")
+    public void the_user_get_a_required_message() {
+        AddEmpPage addEmp = new AddEmpPage(driver, wait);
+        addEmp.checkNameRequired();
     }
 }
