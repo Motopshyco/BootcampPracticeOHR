@@ -7,7 +7,7 @@
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/EditEmployeePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/EditEmployeePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/features/PIM.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PIM.feature" afterDir="false" />
     </list>
@@ -272,6 +272,26 @@
           <url>file://$PROJECT_DIR$/src/test/java/pages/EmployeeListPage.java</url>
           <line>70</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java</url>
+          <line>88</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/pages/AddEmpPage.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

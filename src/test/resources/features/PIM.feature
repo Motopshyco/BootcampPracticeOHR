@@ -29,6 +29,13 @@ Feature: PIM
 
   @Negative
   Scenario: The user can't create two employees with the same id
-    When The user tries to create another employee with the same id
+    When the user goes to the Add Employee tab
+    And The user tries to create another employee with the same id
     Then the user should to receive an error message
     And the user delete the employee
+
+  @Negative
+  Scenario: The user can't create an employee without name
+    When the user goes to the Add Employee tab
+    And the user saves the new employee
+    Then the user get a required message

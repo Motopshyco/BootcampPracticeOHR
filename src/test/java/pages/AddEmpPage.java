@@ -27,14 +27,14 @@ public class AddEmpPage extends BasePage{
     @FindBy(css = "div[class='oxd-input-group oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     public WebElement idInput;
 
+    @FindBy(xpath = "//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div/form/div[1]/div[2]/div[1]/div[2]/div/div/div[2]/input")
+    public WebElement idInput2;
+
     @FindBy(css = "button[type='submit']")
     public WebElement saveButton;
 
     @FindBy(css = "//button[normalize-space()='Cancel']")
     public WebElement cancelButton;
-
-    @FindBy(xpath = "//h6[normalize-space()='Personal Details']")
-    public WebElement personalDetailsTittle;
 
     @FindBy(xpath = "//label[normalize-space()='Employee Full Name']")
     public WebElement employeeFullNameTittle;
@@ -45,8 +45,12 @@ public class AddEmpPage extends BasePage{
     @FindBy(css = "input[class=\"oxd-input oxd-input--active oxd-input--error\"]")
     public WebElement idInputError;
 
+    @FindBy(xpath = "//div[@class='oxd-input-group']//div[1]//span[1]")
+    public WebElement nameRequired;
+
     public void selectAddEmployee () {
         clickElement(addUserButton);
+        waitChargeTime();
     }
 
     public void fillFirstName (String firstName) {
@@ -67,12 +71,10 @@ public class AddEmpPage extends BasePage{
     public void saveNewEmployee () {
         clickElement(idInput);
         clickElement(saveButton);
-        WaitUntilElementVisible(personalDetailsTittle);
     }
 
     public void editEmployeeName (String firstName, String middleName) {
         waitChargeTime();
-        WaitUntilElementVisible(personalDetailsTittle);
         WaitUntilElementVisible(employeeFullNameTittle);
         firstNameInput.sendKeys(Keys.CONTROL + "a");
         firstNameInput.sendKeys(Keys.DELETE);
@@ -84,13 +86,18 @@ public class AddEmpPage extends BasePage{
 
     public void changeEmployeeId (String id) {
         WaitUntilElementVisible(idInput);
-        idInput.sendKeys(Keys.CONTROL + "a");
-        idInput.sendKeys(Keys.DELETE);
-        idInput.sendKeys(id);
+        idInput2.sendKeys(Keys.CONTROL + "a");
+        idInput2.sendKeys(Keys.DELETE);
+        idInput2.sendKeys(id);
     }
 
     public void checkErrorMessage () {
         WaitUntilElementVisible(duplicateIdMessage);
         Assert.assertTrue(duplicateIdMessage.isDisplayed());
+    }
+
+    public void checkNameRequired () {
+        WaitUntilElementVisible(nameRequired);
+        Assert.assertTrue(nameRequired.isDisplayed());
     }
 }
