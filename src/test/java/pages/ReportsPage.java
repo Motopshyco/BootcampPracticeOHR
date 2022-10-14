@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -60,7 +61,7 @@ public class ReportsPage extends BasePage{
     @FindBy(css = "div[class='oxd-table-card'] div:nth-child(2) div:nth-child(1)")
     public WebElement filteredElement;
 
-    @FindBy(css = "div[role='option']")
+    @FindBy(css = "div[role='listbox']>div:nth-child(1)")
     public WebElement filterOption;
 
     @FindBy(css = ".oxd-icon.bi-trash")
@@ -70,7 +71,15 @@ public class ReportsPage extends BasePage{
     public WebElement acceptDelete;
 
     @FindBy(css = "div[id='oxd-toaster_1']")
-    public WebElement confirmDelete;
+    public WebElement alertMessage;
+
+    @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
+    public WebElement errorMessageInTheName;
+
+    public WebElement filterSelector(String filteredName) {
+        WebElement filteredElement = driver.findElement(By.xpath("//span[normalize-space()='" + filteredName + "']"));
+        return filteredElement;
+    }
 
     public void selectReportTab() {
         clickElement(reportsButton);
@@ -95,10 +104,10 @@ public class ReportsPage extends BasePage{
 
     public void saveReport() {
         clickElement(mainButton);
-        WaitUntilElementVisible(headerTittle);
     }
 
     public void checkCreatedReport() {
+        WaitUntilElementVisible(headerTittle);
         Assert.assertTrue(createdTittle.isDisplayed());
     }
 
@@ -120,11 +129,24 @@ public class ReportsPage extends BasePage{
         WaitUntilElementVisible(filteredElement);
         clickElement(deleteIcon);
         clickElement(acceptDelete);
-        waitChargeTime();
     }
 
-    public void checkDeletedReport() {
-        WaitUntilElementVisible(confirmDelete);
-        Assert.assertFalse(confirmDelete.isDisplayed());
+    public void checkMessage() {
+        WaitUntilElementVisible(alertMessage);
+        Assert.assertTrue(alertMessage.isDisplayed());
+    }
+
+    public void checkErrorNameMessage() {
+        WaitUntilElementVisible(errorMessageInTheName);
+        Assert.assertTrue(errorMessageInTheName.isDisplayed());
+    }
+
+    public void checkAddReportPage() {
+        WaitUntilElementVisible(addReportTittle);
+        WaitUntilElementVisible(addFieldButton);
+        WaitUntilElementVisible(fieldGroupDropDown);
+        Assert.assertTrue(addReportTittle.isDisplayed());
+        Assert.assertTrue(addFieldButton.isDisplayed());
+        Assert.assertTrue(fieldGroupDropDown.isDisplayed());
     }
 }
