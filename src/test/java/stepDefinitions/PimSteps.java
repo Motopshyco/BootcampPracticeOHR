@@ -116,24 +116,4 @@ public class PimSteps {
         employeeList.searchEmployeeByName(name);
         employeeList.checkNewUser(name);
     }
-
-    @Given("the user goes to the reports tab")
-    public void the_user_goes_to_the_reports_tab() {
-        ReportsPage reports = new ReportsPage(driver, wait);
-        reports.selectReportTab();
-    }
-
-    @When("the user creates a report with the name {string}")
-    public void the_user_creates_a_report_with_the_name(String reportName) {
-        ReportsPage reports = new ReportsPage(driver, wait);
-        reports.setReportName(reportName);
-        reports.selectReportOption();
-        reports.saveReport();
-    }
-
-    @When("the new report should be show in the report list")
-    public void the_new_report_should_be_show_in_the_report_list() {
-        ReportsPage reports = new ReportsPage(driver, wait);
-        reports.checkCreatedReport();
-    }
 }
