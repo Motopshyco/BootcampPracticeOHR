@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/ReportsSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/PimSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Reports.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Reports.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,8 +232,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestRunner" />
-        <item itemvalue="Cucumber Java.Feature: Reports" />
         <item itemvalue="Cucumber Java.Scenario: the user can filter a project by name" />
+        <item itemvalue="Cucumber Java.Feature: Reports" />
         <item itemvalue="Cucumber Java.Scenario: The user can create a report (1)" />
         <item itemvalue="Cucumber Java.Scenario: The user can create a report" />
       </list>

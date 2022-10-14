@@ -103,6 +103,6 @@ public class ReportsPage extends BasePage{
 
     public void checkFiltered(String filteredName) {
         String name = filteredElement.getText();
-        Assert.assertSame(name, filteredName);
+        Assert.assertEquals(name, filteredName);
     }
 }
