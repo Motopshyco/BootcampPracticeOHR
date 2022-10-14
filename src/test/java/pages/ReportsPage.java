@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -26,6 +27,9 @@ public class ReportsPage extends BasePage{
     @FindBy(css = "input[placeholder='Type here ...']")
     public WebElement reportNameInput;
 
+    @FindBy(css = "input[placeholder='Type for hints...']")
+    public WebElement reportNameFilter;
+
     @FindBy(xpath = "//div[3]//div[1]//div[1]//div[1]//div[2]//div[1]//div[1]//div[2]//i[1]")
     public WebElement fieldGroupDropDown;
 
@@ -45,13 +49,19 @@ public class ReportsPage extends BasePage{
     public WebElement addedFieldText;
 
     @FindBy(css = "button[type='submit']")
-    public WebElement saveButton;
+    public WebElement mainButton;
 
     @FindBy(css = ".header-content")
     public WebElement headerTittle;
 
     @FindBy(css = ".oxd-text.oxd-text--h6.orangehrm-main-title")
     public WebElement createdTittle;
+
+    @FindBy(css = "div[class='oxd-table-card'] div:nth-child(2) div:nth-child(1)")
+    public WebElement filteredElement;
+
+    @FindBy(css = "div[role='option']")
+    public WebElement filterOption;
 
     public void selectReportTab() {
         clickElement(reportsButton);
@@ -75,11 +85,24 @@ public class ReportsPage extends BasePage{
     }
 
     public void saveReport() {
-        clickElement(saveButton);
+        clickElement(mainButton);
         WaitUntilElementVisible(headerTittle);
     }
 
     public void checkCreatedReport() {
         Assert.assertTrue(createdTittle.isDisplayed());
+    }
+
+    public void filterReport(String name) {
+        clickElement(reportNameFilter);
+        reportNameFilter.sendKeys(name);
+        WaitUntilElementVisible(filterOption);
+        clickElement(mainButton);
+        WaitUntilElementVisible(filteredElement);
+    }
+
+    public void checkFiltered(String filteredName) {
+        String name = filteredElement.getText();
+        Assert.assertSame(name, filteredName);
     }
 }
