@@ -51,4 +51,16 @@ public class ReportsSteps {
         ReportsPage reports = new ReportsPage(driver, wait);
         reports.checkFiltered(name);
     }
+
+    @When("the user deletes the created report")
+    public void the_user_deletes_the_created_report() {
+        ReportsPage reports = new ReportsPage(driver, wait);
+        reports.deleteReport();
+    }
+
+    @Then("the report is deleted")
+    public void the_report_is_deleted() {
+        ReportsPage reports = new ReportsPage(driver, wait);
+        reports.checkDeletedReport();
+    }
 }

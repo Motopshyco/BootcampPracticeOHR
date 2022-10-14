@@ -63,6 +63,15 @@ public class ReportsPage extends BasePage{
     @FindBy(css = "div[role='option']")
     public WebElement filterOption;
 
+    @FindBy(css = ".oxd-icon.bi-trash")
+    public WebElement deleteIcon;
+
+    @FindBy(css = "button[class*='oxd-button--label-danger orangehrm-button-margin']")
+    public WebElement acceptDelete;
+
+    @FindBy(css = "div[id='oxd-toaster_1']")
+    public WebElement confirmDelete;
+
     public void selectReportTab() {
         clickElement(reportsButton);
         WaitUntilElementVisible(reportsTittle);
@@ -97,12 +106,25 @@ public class ReportsPage extends BasePage{
         clickElement(reportNameFilter);
         reportNameFilter.sendKeys(name);
         WaitUntilElementVisible(filterOption);
+        clickElement(filterOption);
         clickElement(mainButton);
-        WaitUntilElementVisible(filteredElement);
     }
 
     public void checkFiltered(String filteredName) {
+        WaitUntilElementVisible(filteredElement);
         String name = filteredElement.getText();
         Assert.assertEquals(name, filteredName);
+    }
+
+    public void deleteReport() {
+        WaitUntilElementVisible(filteredElement);
+        clickElement(deleteIcon);
+        clickElement(acceptDelete);
+        waitChargeTime();
+    }
+
+    public void checkDeletedReport() {
+        WaitUntilElementVisible(confirmDelete);
+        Assert.assertFalse(confirmDelete.isDisplayed());
     }
 }
