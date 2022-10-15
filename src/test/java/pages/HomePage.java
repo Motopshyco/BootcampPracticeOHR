@@ -11,6 +11,12 @@ public class HomePage extends BasePage {
         super(driver, wait);
     }
 
+    @FindBy(css = ".oxd-userdropdown-tab")
+    public WebElement userDropDownButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Logout']")
+    public WebElement logOutButton;
+
     public WebElement menuSelector(String option) {
         WebElement menuButton = driver.findElement(By.xpath("//span[text()='" + option + "']"));
         return menuButton;
@@ -29,8 +35,6 @@ public class HomePage extends BasePage {
         Assert.assertTrue(menuSelector("Recruitment").isDisplayed());
         WaitUntilElementVisible(menuSelector("My Info"));
         Assert.assertTrue(menuSelector("My Info").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Performance"));
-        Assert.assertTrue(menuSelector("Performance").isDisplayed());
         WaitUntilElementVisible(menuSelector("Dashboard"));
         Assert.assertTrue(menuSelector("Dashboard").isDisplayed());
         WaitUntilElementVisible(menuSelector("Directory"));
@@ -39,5 +43,10 @@ public class HomePage extends BasePage {
         Assert.assertTrue(menuSelector("Maintenance").isDisplayed());
         WaitUntilElementVisible(menuSelector("Buzz"));
         Assert.assertTrue(menuSelector("Buzz").isDisplayed());
+    }
+
+    public void logOut() {
+        clickElement(userDropDownButton);
+        clickElement(logOutButton);
     }
 }

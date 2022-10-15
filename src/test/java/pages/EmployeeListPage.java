@@ -19,7 +19,7 @@ public class EmployeeListPage extends BasePage {
     @FindBy(css = "div[class*='oxd-input-field-bottom-space'] div input[class='oxd-input oxd-input--active']")
     public WebElement idFilterInput;
 
-    @FindBy(xpath = "//button[normalize-space()='Search']")
+    @FindBy(css = "button[type='submit']")
     public WebElement searchButton;
 
     @FindBy(css = "div[class*='orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
@@ -31,21 +31,32 @@ public class EmployeeListPage extends BasePage {
     @FindBy(xpath = "//button[normalize-space()='Yes, Delete']")
     public WebElement acceptDelete;
 
-    @FindBy(xpath = "//span[normalize-space()='No Records Found']")
+    @FindBy(css = "div[class='orangehrm-horizontal-padding orangehrm-vertical-padding'] span[class='oxd-text oxd-text--span']")
     public WebElement emptyMessage;
 
     @FindBy(css = ".oxd-icon.bi-pencil-fill")
     public WebElement editEmployeeIcon;
+
+    @FindBy(xpath = "//body[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/input[1]")
+    public WebElement filterByNameInput;
 
     public WebElement nameSelector(String name) {
         WebElement nameString = driver.findElement(By.xpath("//div[contains(text(),'" + name + "')]"));
         return nameString;
     }
 
-    public void searchEmployee() {
+    public void searchEmployee(String id) {
         clickElement(employeeListButton);
         WaitUntilElementVisible(idFilterInput);
-        idFilterInput.sendKeys(Keys.CONTROL + "v");
+        idFilterInput.sendKeys(id);
+        clickElement(searchButton);
+        WaitUntilElementVisible(searchTittle);
+    }
+
+    public void searchEmployeeByName(String name) {
+        clickElement(employeeListButton);
+        WaitUntilElementVisible(filterByNameInput);
+        filterByNameInput.sendKeys(name);
         clickElement(searchButton);
         WaitUntilElementVisible(searchTittle);
     }

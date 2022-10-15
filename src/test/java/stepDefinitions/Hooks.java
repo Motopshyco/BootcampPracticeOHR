@@ -4,9 +4,6 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import webDrivers.strategies.WebDriverFactory;
 
-import java.time.Duration;
-import java.util.concurrent.TimeUnit;
-
 public class Hooks {
 
     public static WebDriver webDriver;

@@ -12,8 +12,15 @@ public class EditEmployeePage extends BasePage {
     @FindBy(css = "div[class*='orangehrm-vertical-padding'] button[type='submit']")
     WebElement firstSaveButton;
 
+    @FindBy(xpath = "//h6[normalize-space()='Personal Details']")
+    public WebElement personalDetailsTittle;
+
     public void savePersonalChanges() {
         WaitUntilElementVisible(firstSaveButton);
         firstSaveButton.click();
+    }
+
+    public void waitPersonalDetailsTittle() {
+        WaitUntilElementVisible(personalDetailsTittle);
     }
 }

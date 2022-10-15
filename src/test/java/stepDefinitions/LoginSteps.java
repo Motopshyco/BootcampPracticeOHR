@@ -35,8 +35,15 @@ public class LoginSteps {
         home.checkHomePage();
     }
 
-    @Given("the user goes to the page")
-    public void the_user_goes_to_the_page(){
-        System.out.println("everything fine");
+    @When("the user log out of the page")
+    public void the_user_log_out_of_the_page() {
+        HomePage home = new HomePage(driver, wait);
+        home.logOut();
+    }
+
+    @Then("the user should be in the login page")
+    public void the_user_should_be_in_the_log_in_page() {
+        LoginPage login = new LoginPage(driver, wait);
+        login.checkLoginPage();
     }
 }
