@@ -44,3 +44,15 @@ Feature: PIM
     When the user goes to the Add Employee tab
     And the user saves the new employee
     Then the user get a required message
+
+  @Boundary
+  Scenario: the user can create an employee with specials characters for name
+    And the user goes to the Add Employee tab
+    And the user sets "$pec|@l" as a first name
+    And the user sets "*/characters" as a middle name
+    And the user sets "Test" as a last name
+    And the user saves the new employee
+    Then the new employee should be show in the Employee List
+    And the user delete the employee
+
+
