@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PIM.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PIM.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ReportsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/ReportsSteps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,27 +288,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pages/ReportsPage.java</url>
-          <line>114</line>
+          <line>117</line>
           <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pages/ReportsPage.java</url>
-          <line>115</line>
+          <line>118</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pages/ReportsPage.java</url>
-          <line>116</line>
+          <line>119</line>
           <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pages/ReportsPage.java</url>
-          <line>117</line>
+          <line>120</line>
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/pages/ReportsPage.java</url>
-          <line>118</line>
+          <line>121</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
       </breakpoints>

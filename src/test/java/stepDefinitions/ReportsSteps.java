@@ -87,6 +87,7 @@ public class ReportsSteps {
     public void the_user_should_receive_a_warning_message_and_continue_in_add_report_page() {
         ReportsPage reports = new ReportsPage(driver, wait);
         reports.checkMessage();
+        reports.checkAddReportPage();
     }
 
     @When("the user tries to create a report without name")
