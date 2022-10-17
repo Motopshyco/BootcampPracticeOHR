@@ -52,6 +52,9 @@ public class ReportsPage extends BasePage{
     @FindBy(css = "button[type='submit']")
     public WebElement mainButton;
 
+    @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
+    public WebElement searchButton;
+
     @FindBy(css = ".header-content")
     public WebElement headerTittle;
 
@@ -116,7 +119,7 @@ public class ReportsPage extends BasePage{
         reportNameFilter.sendKeys(name);
         WaitUntilElementVisible(filterOption);
         clickElement(filterOption);
-        clickElement(mainButton);
+        clickElement(searchButton);
     }
 
     public void checkFiltered(String filteredName) {
