@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ReportsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/ReportsSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/ReportsSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/LoginSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: the user can't create 2 reports with the same name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: the user can't login into the page with invalid credential" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
         <env name="browser" value="chrome" />
@@ -81,14 +83,14 @@
         <env name="user" value="Admin" />
         <env name="password" value="admin123" />
       </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Reports.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^the user can\'t create 2 reports with the same name$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t create 2 reports with the same name$&quot;" />
+      <option name="NAME_FILTER" value="^the user can\'t login into the page with invalid credential$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t login into the page with invalid credential$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: the user can't create 2 reports with the same name" />
+      <option name="SUGGESTED_NAME" value="Scenario: the user can't login into the page with invalid credential" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -100,7 +102,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: the user can't create a report without name" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: the user can't login into the page without a password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
         <env name="browser" value="chrome" />
@@ -109,14 +111,14 @@
         <env name="user" value="Admin" />
         <env name="password" value="admin123" />
       </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Reports.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^the user can\'t create a report without name$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t create a report without name$&quot;" />
+      <option name="NAME_FILTER" value="^the user can\'t login into the page without a password$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t login into the page without a password$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: the user can't create a report without name" />
+      <option name="SUGGESTED_NAME" value="Scenario: the user can't login into the page without a password" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -128,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: the user can't create without display field" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: the user can't login into the page without a username" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
         <env name="browser" value="chrome" />
@@ -137,14 +139,14 @@
         <env name="user" value="Admin" />
         <env name="password" value="admin123" />
       </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Reports.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^the user can\'t create without display field$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t create without display field$&quot;" />
+      <option name="NAME_FILTER" value="^the user can\'t login into the page without a username$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t login into the page without a username$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: the user can't create without display field" />
+      <option name="SUGGESTED_NAME" value="Scenario: the user can't login into the page without a username" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -234,10 +236,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: the user can't login into the page with invalid credential" />
+        <item itemvalue="Cucumber Java.Scenario: the user can't login into the page without a username" />
+        <item itemvalue="Cucumber Java.Scenario: the user can't login into the page without a password" />
         <item itemvalue="Cucumber Java.Scenario: The user can log out of the page" />
-        <item itemvalue="Cucumber Java.Scenario: the user can't create a report without name" />
-        <item itemvalue="Cucumber Java.Scenario: the user can't create without display field" />
-        <item itemvalue="Cucumber Java.Scenario: the user can't create 2 reports with the same name" />
       </list>
     </recent_temporary>
   </component>

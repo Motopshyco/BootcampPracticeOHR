@@ -17,12 +17,16 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//a[normalize-space()='Logout']")
     public WebElement logOutButton;
 
+    @FindBy(css = "img[alt='client brand banner']")
+    public WebElement logoBanner;
+
     public WebElement menuSelector(String option) {
         WebElement menuButton = driver.findElement(By.xpath("//span[text()='" + option + "']"));
         return menuButton;
     }
 
     public void checkHomePage() {
+        WaitUntilElementVisible(logoBanner);
         WaitUntilElementVisible(menuSelector("Admin"));
         Assert.assertTrue(menuSelector("Admin").isDisplayed());
         WaitUntilElementVisible(menuSelector("PIM"));
@@ -46,6 +50,7 @@ public class HomePage extends BasePage {
     }
 
     public void logOut() {
+        WaitUntilElementVisible(logoBanner);
         clickElement(userDropDownButton);
         clickElement(logOutButton);
     }
