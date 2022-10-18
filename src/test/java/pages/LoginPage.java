@@ -19,19 +19,24 @@ public class LoginPage extends BasePage {
     @FindBy(css = "button[class*='orangehrm-login-button']")
     public WebElement loginButton;
 
-    @FindBy(css = "img[alt='client brand banner']")
-    public WebElement logoBanner;
+    @FindBy(css = ".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message")
+    public WebElement requiredMessage;
 
-    public void fillLoginCredentials() {
+    @FindBy(css = ".oxd-text.oxd-text--p.oxd-alert-content-text")
+    public WebElement invalidCredentialsMessage;
+
+    public void fillUserName(String userName) {
         WaitUntilElementVisible(usernameInput);
-        usernameInput.sendKeys(System.getenv("user"));
+        usernameInput.sendKeys(userName);
+    }
+
+    public void fillPassword(String password) {
         WaitUntilElementVisible(passwordInput);
-        passwordInput.sendKeys(System.getenv("password"));
+        passwordInput.sendKeys(password);
     }
 
     public void clickLoginButton() {
         clickElement(loginButton);
-        WaitUntilElementVisible(logoBanner);
     }
 
     public void checkLoginPage() {
@@ -41,5 +46,15 @@ public class LoginPage extends BasePage {
         Assert.assertTrue(usernameInput.isDisplayed());
         Assert.assertTrue(passwordInput.isDisplayed());
         Assert.assertTrue(loginButton.isDisplayed());
+    }
+
+    public void checkRequiredMessage() {
+        WaitUntilElementVisible(requiredMessage);
+        Assert.assertTrue(requiredMessage.isDisplayed());
+    }
+
+    public void checkInvalidCred() {
+        WaitUntilElementVisible(invalidCredentialsMessage);
+        Assert.assertTrue(invalidCredentialsMessage.isDisplayed());
     }
 }
