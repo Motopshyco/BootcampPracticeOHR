@@ -1,4 +1,6 @@
 package stepDefinitions;
+import io.cucumber.datatable.DataTable;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,9 +9,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.AddEmpPage;
 import pages.EditEmployeePage;
 import pages.EmployeeListPage;
-import pages.ReportsPage;
-
 import java.time.Duration;
+import java.util.List;
+import java.util.Map;
 
 public class PimSteps {
     private WebDriver driver = Hooks.webDriver;
@@ -27,23 +29,21 @@ public class PimSteps {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
         addEmp.selectAddEmployee();
     }
-    @When("the user sets {string} as a first name")
-    public void the_user_sets_as_a_first_name(String firstName) {
+
+    @And("the user sets his information")
+    public void theUserSetsHisInformation(DataTable table) {
+        List<Map<String, String>> signUpForms = table.asMaps(String.class, String.class);
+        String firstName = signUpForms.get(0).get("firstName");
+        String middleName = signUpForms.get(0).get("middleName");
+        String lastName = signUpForms.get(0).get("lastName");
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
         name = firstName;
         addEmp.fillFirstName(firstName);
-    }
-    @When("the user sets {string} as a middle name")
-    public void the_user_sets_as_a_middle_name(String middleName) {
-        AddEmpPage addEmp = new AddEmpPage(driver, wait);
         name = name + " " + middleName;
         addEmp.fillMiddleName(middleName);
-    }
-    @When("the user sets {string} as a last name")
-    public void the_user_sets_as_a_last_name(String lastName) {
-        AddEmpPage addEmp = new AddEmpPage(driver, wait);
         addEmp.fillLastName(lastName);
     }
+
     @When("the user saves the new employee")
     public void the_user_saves_the_new_employee() {
         AddEmpPage addEmp = new AddEmpPage(driver, wait);
@@ -116,4 +116,5 @@ public class PimSteps {
         employeeList.searchEmployeeByName(name);
         employeeList.checkNewUser(name);
     }
+
 }

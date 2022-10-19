@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class ReportsPage extends BasePage{
     public ReportsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -120,6 +122,7 @@ public class ReportsPage extends BasePage{
         WaitUntilElementVisible(filterOption);
         clickElement(filterOption);
         clickElement(searchButton);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     public void checkFiltered(String filteredName) {
