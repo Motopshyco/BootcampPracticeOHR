@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78f07c1a-a966-46de-8cd7-e5f00ce02b97" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/MyInfoPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/MyInfoSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/MyInfo.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/stepDefinitions/LoginSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/stepDefinitions/LoginSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/Reports.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/Reports.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +47,7 @@
   }
 }</component>
   <component name="RunManager" selected="TestNG.TestRunner">
-    <configuration name="Scenario: The user can log out of the page" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: The user can see his name is the name than the top bar" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <envs>
         <env name="browser" value="chrome" />
@@ -55,14 +56,42 @@
         <env name="user" value="Admin" />
         <env name="password" value="admin123" />
       </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/MyInfo.feature" />
       <option name="GLUE" value="stepDefinitions" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^The user can log out of the page$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can log out of the page$&quot;" />
+      <option name="NAME_FILTER" value="^The user can see his name is the name than the top bar$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^The user can see his name is the name than the top bar$&quot;" />
       <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: The user can log out of the page" />
+      <option name="SUGGESTED_NAME" value="Scenario: The user can see his name is the name than the top bar" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: the user can review his personal information in my info tab" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <envs>
+        <env name="browser" value="chrome" />
+        <env name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" />
+        <env name="timeout" value="5" />
+        <env name="user" value="Admin" />
+        <env name="password" value="admin123" />
+      </envs>
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/MyInfo.feature" />
+      <option name="GLUE" value="stepDefinitions" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="BootcampPracticeOHR" />
+      <option name="NAME_FILTER" value="^the user can review his personal information in my info tab$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can review his personal information in my info tab$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: the user can review his personal information in my info tab" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -91,34 +120,6 @@
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t login into the page with invalid credential$&quot;" />
       <shortenClasspath name="NONE" />
       <option name="SUGGESTED_NAME" value="Scenario: the user can't login into the page with invalid credential" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: the user can't login into the page without a password" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <envs>
-        <env name="browser" value="chrome" />
-        <env name="url" value="https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" />
-        <env name="timeout" value="5" />
-        <env name="user" value="Admin" />
-        <env name="password" value="admin123" />
-      </envs>
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/Login.feature" />
-      <option name="GLUE" value="stepDefinitions" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="BootcampPracticeOHR" />
-      <option name="NAME_FILTER" value="^the user can\'t login into the page without a password$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^the user can\'t login into the page without a password$&quot;" />
-      <shortenClasspath name="NONE" />
-      <option name="SUGGESTED_NAME" value="Scenario: the user can't login into the page without a password" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -236,10 +237,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: the user can review his personal information in my info tab" />
+        <item itemvalue="Cucumber Java.Scenario: The user can see his name is the name than the top bar" />
         <item itemvalue="Cucumber Java.Scenario: the user can't login into the page with invalid credential" />
         <item itemvalue="Cucumber Java.Scenario: the user can't login into the page without a username" />
-        <item itemvalue="Cucumber Java.Scenario: the user can't login into the page without a password" />
-        <item itemvalue="Cucumber Java.Scenario: The user can log out of the page" />
       </list>
     </recent_temporary>
   </component>

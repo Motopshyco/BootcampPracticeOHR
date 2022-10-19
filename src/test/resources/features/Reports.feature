@@ -20,6 +20,7 @@ Feature: Reports
     And the user goes to the reports tab
     When the user filters the reports using the name "test2"
     Then the report should appears in the list
+    And the user deletes the created report
 
   @Functional
   Scenario: the user can delete a report
@@ -43,6 +44,9 @@ Feature: Reports
     And the user goes to the reports tab
     When the user tries to create another report with the same name
     Then the user should receive message the already exists
+    And the user goes to the reports tab
+    And the user filters the reports using the name "test4"
+    And the user deletes the created report
 
   @Negative
   Scenario: the user can't create without display field

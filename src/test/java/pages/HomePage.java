@@ -54,4 +54,8 @@ public class HomePage extends BasePage {
         clickElement(userDropDownButton);
         clickElement(logOutButton);
     }
+
+    public void goToMyInfo() {
+        clickElement(menuSelector("My Info"));
+    }
 }
