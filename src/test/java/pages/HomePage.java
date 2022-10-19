@@ -27,26 +27,9 @@ public class HomePage extends BasePage {
 
     public void checkHomePage() {
         WaitUntilElementVisible(logoBanner);
-        WaitUntilElementVisible(menuSelector("Admin"));
-        Assert.assertTrue(menuSelector("Admin").isDisplayed());
         WaitUntilElementVisible(menuSelector("PIM"));
         Assert.assertTrue(menuSelector("PIM").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Leave"));
-        Assert.assertTrue(menuSelector("Leave").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Time"));
-        Assert.assertTrue(menuSelector("Time").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Recruitment"));
-        Assert.assertTrue(menuSelector("Recruitment").isDisplayed());
         WaitUntilElementVisible(menuSelector("My Info"));
-        Assert.assertTrue(menuSelector("My Info").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Dashboard"));
-        Assert.assertTrue(menuSelector("Dashboard").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Directory"));
-        Assert.assertTrue(menuSelector("Directory").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Maintenance"));
-        Assert.assertTrue(menuSelector("Maintenance").isDisplayed());
-        WaitUntilElementVisible(menuSelector("Buzz"));
-        Assert.assertTrue(menuSelector("Buzz").isDisplayed());
     }
 
     public void logOut() {
