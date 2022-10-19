@@ -1,3 +1,5 @@
+Bootcamp practice in the Orange page
+
 This is a framework to test the Orange HRM page and here are the instructions to use it:
 
 Dependencies:
