@@ -1,12 +1,13 @@
 Feature: PIM
+
   Background: The user login into the page
     Given the user navigates to the page
     When the user submit the username and password
     Then the user should be logged into the page
     And the user goes to the Add Employee tab
-    And the user sets "Santiago" as a first name
-    And the user sets "De Jesus" as a middle name
-    And the user sets "Raballo" as a last name
+    And the user sets his information
+      | firstName | middleName | lastName |
+      | Santiago  | De jesus   | Raballo  |
     And the user saves the new employee
 
   @Smoke @Functional
@@ -48,9 +49,9 @@ Feature: PIM
   @Boundary
   Scenario: the user can create an employee with specials characters for name
     And the user goes to the Add Employee tab
-    And the user sets "$pec|@l" as a first name
-    And the user sets "*/characters" as a middle name
-    And the user sets "Test" as a last name
+    And the user sets his information
+      | firstName | middleName   | lastName |
+      | $pec)@l   | */characters | Test     |
     And the user saves the new employee
     Then the new employee should be show in the Employee List
     And the user delete the employee

@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.time.Duration;
+
 public class ReportsPage extends BasePage{
     public ReportsPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
@@ -51,6 +53,9 @@ public class ReportsPage extends BasePage{
 
     @FindBy(css = "button[type='submit']")
     public WebElement mainButton;
+
+    @FindBy(css = "button[class='oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space']")
+    public WebElement searchButton;
 
     @FindBy(css = ".header-content")
     public WebElement headerTittle;
@@ -116,7 +121,8 @@ public class ReportsPage extends BasePage{
         reportNameFilter.sendKeys(name);
         WaitUntilElementVisible(filterOption);
         clickElement(filterOption);
-        clickElement(mainButton);
+        clickElement(searchButton);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     public void checkFiltered(String filteredName) {

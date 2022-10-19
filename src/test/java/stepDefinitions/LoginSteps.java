@@ -26,7 +26,8 @@ public class LoginSteps {
     @When("the user submit the username and password")
     public void the_user_submit_the_username_and_password() {
         LoginPage loginPage = new LoginPage(driver, wait);
-        loginPage.fillLoginCredentials();
+        loginPage.fillUserName(System.getenv("user"));
+        loginPage.fillPassword(System.getenv("password"));
         loginPage.clickLoginButton();
     }
     @Then("the user should be logged into the page")
@@ -45,5 +46,39 @@ public class LoginSteps {
     public void the_user_should_be_in_the_log_in_page() {
         LoginPage login = new LoginPage(driver, wait);
         login.checkLoginPage();
+    }
+
+    @When("the user submit the username")
+    public void the_user_submit_the_username() {
+        LoginPage loginPage = new LoginPage(driver, wait);
+        loginPage.fillUserName(System.getenv("user"));
+        loginPage.clickLoginButton();
+    }
+
+    @Then("the user should receive a required message")
+    public void the_user_should_receive_a_required_message() {
+        LoginPage loginPage = new LoginPage(driver, wait);
+        loginPage.checkRequiredMessage();
+    }
+
+    @When("the user submit the password")
+    public void the_user_submit_the_password() {
+        LoginPage loginPage = new LoginPage(driver, wait);
+        loginPage.fillPassword(System.getenv("password"));
+        loginPage.clickLoginButton();
+    }
+
+    @When("the user submit invalid credentials")
+    public void the_user_submit_invalid_credentials() {
+        LoginPage loginPage = new LoginPage(driver, wait);
+        loginPage.fillUserName("username");
+        loginPage.fillPassword("wrong");
+        loginPage.clickLoginButton();
+    }
+
+    @Then("the user should receive a invalid credentials message")
+    public void the_user_should_receive_a_invalid_credentials_message() {
+        LoginPage loginPage = new LoginPage(driver, wait);
+        loginPage.checkInvalidCred();
     }
 }
